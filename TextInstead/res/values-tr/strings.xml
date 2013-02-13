@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Mesaj Gönder?</string>
+    
+    <string name="unknown_name">Bilinmeyen</string>
+    
+    <string name="dialog_title">Mesaj Gönder?</string>
+    <string name="dialog_message">Aradığınız\n\n%1$s (%2$s)\n\nkişisine telefonla ulaşamadınız. Bunun yerine mesaj göndermek ister misiniz?</string>
+    <string name="dialog_yes">Evet</string>
+    <string name="dialog_no">Hayır</string>
+
+</resources>
