@@ -4,9 +4,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
+import com.mehmetakiftutuncu.textinstead.Constants;
 import com.mehmetakiftutuncu.textinstead.services.CallListenerService;
 
 /**
@@ -37,10 +39,18 @@ public class CallBroadcastReceiver extends BroadcastReceiver
 			/* If phone call state was offhook, it means an outgoing call has started */
 			if(stateExtra.equals(TelephonyManager.EXTRA_STATE_OFFHOOK))
 			{
-				Log.d(DEBUG_KEY, "Starting call listener service...");
-					
+				/* If the application is enabled from preferences */
+				if(PreferenceManager.getDefaultSharedPreferences(context).getBoolean(Constants.PREFERENCE_STATUS, true))
+				{
+					Log.d(DEBUG_KEY, "Starting call listener service...");
+						
 					/* Start call listener service to detect when and/or if the call ends with 0 seconds duration */
 					context.startService(new Intent(context, CallListenerService.class));
+				}
+				else
+				{
+					Log.d(DEBUG_KEY, "Not starting call listener service... Application is disabled from preferences.");
+				}
 			}
 		}
 	}

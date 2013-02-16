@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.IBinder;
+import android.preference.PreferenceManager;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -138,7 +139,11 @@ public class CallListenerService extends Service
 	    		/* Wait until the last call is written to call log database */
 	    		try
 	    		{
-					Thread.sleep(Constants.WAIT_TIME_AFTER_CALL);
+	    			String delay = PreferenceManager.getDefaultSharedPreferences(CallListenerService.this).getString(Constants.PREFERENCE_DELAY, "2");
+	    			
+	    			Log.d(DEBUG_KEY, "Sleeping for " + delay + " seconds...");
+	    			
+	    			Thread.sleep(Long.parseLong(delay) * 1000);
 				}
 	    		catch(InterruptedException e)
 	    		{
@@ -151,7 +156,7 @@ public class CallListenerService extends Service
 	        	/* If it is not null, outgoing and the duration of it is 0 seconds */
 	        	if(	lastCall != null &&
 	        		lastCall.getCallType().equals(String.valueOf(android.provider.CallLog.Calls.OUTGOING_TYPE)) &&
-	        		lastCall.getDuration().equals("0"))
+	        		Integer.parseInt(lastCall.getDuration()) <= 2)
 	        	{
 	        		Log.d(DEBUG_KEY, "Taking action!");
 	        		
