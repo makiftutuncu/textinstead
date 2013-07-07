@@ -2,41 +2,20 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <PreferenceCategory android:title="@string/preferences_general_title" >
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:key="preference_status"
-            android:summary="@string/preferences_status_summary"
-            android:title="@string/preferences_status_title" />
-
         <ListPreference
             android:defaultValue="2"
             android:entries="@array/preferences_delay_entries"
             android:entryValues="@array/preferences_delay_entries"
             android:key="preference_delay"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null"
             android:summary="@string/preferences_delay_summary"
             android:title="@string/preferences_delay_title" />
-    </PreferenceCategory>
-    <PreferenceCategory android:title="@string/preferences_messages_title" >
-        <EditTextPreference
-            android:key="preference_messages_1"
-            android:title="@string/preferences_messages_1" />
-        <EditTextPreference
-            android:key="preference_messages_2"
-            android:title="@string/preferences_messages_2" />
-        <EditTextPreference
-            android:key="preference_messages_3"
-            android:title="@string/preferences_messages_3" />
-        <EditTextPreference
-            android:key="preference_messages_4"
-            android:title="@string/preferences_messages_4" />
-        <EditTextPreference
-            android:key="preference_messages_5"
-            android:title="@string/preferences_messages_5" />
-    </PreferenceCategory>
-    <PreferenceCategory android:title="@string/preferences_other_title">
-        <Preference android:title="@string/preferences_other_contact" android:summary="m.akif.tutuncu@gmail.com" android:key="preference_other_contact"/>
-        <Preference android:key="preference_other_website" android:title="@string/preferences_other_website" android:summary="http://mehmetakiftutuncu.blogspot.com"/><Preference android:title="@string/preferences_other_about" android:key="preference_other_about"/>
-        
+
+        <Preference
+            android:key="preference_messages"
+            android:summary="@string/preferences_messages_summary"
+            android:title="@string/preferences_messages" />
     </PreferenceCategory>
 
 </PreferenceScreen>

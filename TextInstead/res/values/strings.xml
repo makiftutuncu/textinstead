@@ -5,6 +5,11 @@
     
     <string name="unknown_name">Unknown</string>
     
+    <string name="main_status">Text Instead? is now</string>
+    <string name="main_status_enabled">ENABLED</string>
+    <string name="main_status_disabled">DISABLED</string>
+    <string name="main_hint">Touch the icon to enable or disable the application.</string>
+    
     <string name="dialog_title">Text Instead?</string>
     <string name="dialog_message">You couldn\'t reach\n\n%1$s (%2$s)\n\nvia phone call. Would you like to text instead?</string>
     <string name="dialog_writeMessage">Write Message</string>
@@ -19,28 +24,24 @@
     <string name="aboutDialog_ok">OK</string>
     
     <string name="preferences_general_title">General</string>
-    
-    <string name="preferences_status_title">Status</string>
-    <string name="preferences_status_summary">Enable/disable the application</string>
-    <string name="preferences_status_switchTextOn">On</string>
-    <string name="preferences_status_switchTextOff">Off</string>
-    
     <string name="preferences_delay_title">Delay (Seconds)</string>
     <string name="preferences_delay_summary">Dialog after the call will be shown after this time.</string>
-    
-    <string name="preferences_messages_title">Custom Messages</string>
-    
+    <string name="preferences_messages">Custom Messages</string>
+    <string name="preferences_messages_summary">Pre-define your custom messages to pick later.</string>
     <string name="preferences_messages_1">Message 1</string>
     <string name="preferences_messages_2">Message 2</string>
     <string name="preferences_messages_3">Message 3</string>
     <string name="preferences_messages_4">Message 4</string>
     <string name="preferences_messages_5">Message 5</string>
-    
     <string name="preferences_messages_notSet">(Not defined)</string>
     
-    <string name="preferences_other_title">Other</string>
-    <string name="preferences_other_contact">Contact developer</string>
-    <string name="preferences_other_website">Website of developer</string>
-    <string name="preferences_other_about">About application</string>
+    <string name="menu_more">More</string>
+    <string name="menu_rate">Rate/Comment</string>
+    <string name="menu_contact">Contact Developer</string>
+    <string name="menu_website">Developer\'s Website</string>
+    <string name="menu_help">Help</string>
+    <string name="menu_about">About Application</string>
+    
+    <string name="contact_subject">About Text Instead?</string>
 
 </resources>

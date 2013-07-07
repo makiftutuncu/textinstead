@@ -5,6 +5,11 @@
     
     <string name="unknown_name">Bilinmeyen</string>
     
+    <string name="main_status">Mesaj Gönder? şu an</string>
+    <string name="main_status_enabled">ETKİN</string>
+    <string name="main_status_disabled">DEVRE DIŞI</string>
+    <string name="main_hint">Uygulamayı etkinleştirmek veya devre dışı bırakmak için simgeye dokunun.</string>
+    
     <string name="dialog_title">Mesaj Gönder?</string>
     <string name="dialog_message">Aradığınız\n\n%1$s (%2$s)\n\nkişisine telefonla ulaşamadınız. Bunun yerine mesaj göndermek ister misiniz?</string>
     <string name="dialog_writeMessage">Mesaj Yaz</string>
@@ -19,28 +24,24 @@
     <string name="aboutDialog_ok">Tamam</string>
     
     <string name="preferences_general_title">Genel</string>
-    
-    <string name="preferences_status_title">Durum</string>
-    <string name="preferences_status_summary">Uygulamayı etkinleştirin/devreden çıkarın</string>
-    <string name="preferences_status_switchTextOn">Açık</string>
-    <string name="preferences_status_switchTextOff">Kapalı</string>
-    
     <string name="preferences_delay_title">Gecikme (Saniye)</string>
     <string name="preferences_delay_summary">Çağrıdan sonraki pencere bu süre sonunda görüntülenecek.</string>
-    
-    <string name="preferences_messages_title">Kişisel Mesajlar</string>
-    
+    <string name="preferences_messages">Kişisel Mesajlar</string>
+    <string name="preferences_messages_summary">Göndermek için seçeceğiniz mesajları önceden belirleyin.</string>
     <string name="preferences_messages_1">Mesaj 1</string>
     <string name="preferences_messages_2">Mesaj 2</string>
     <string name="preferences_messages_3">Mesaj 3</string>
     <string name="preferences_messages_4">Mesaj 4</string>
     <string name="preferences_messages_5">Mesaj 5</string>
-    
     <string name="preferences_messages_notSet">(Belirlenmemiş)</string>
     
-    <string name="preferences_other_title">Diğer</string>
-    <string name="preferences_other_contact">Geliştiriciye ulaşın</string>
-    <string name="preferences_other_website">Geliştiricinin web sayfası</string>
-    <string name="preferences_other_about">Uygulama hakkında</string>
+    <string name="menu_more">Daha Fazla</string>
+    <string name="menu_rate">Oy Verin/Yorum Yapın</string>
+    <string name="menu_contact">Geliştiriciye Ulaşın</string>
+    <string name="menu_website">Geliştiricinin Web Sayfası</string>
+    <string name="menu_help">Yardım</string>
+    <string name="menu_about">Uygulama Hakkında</string>
+    
+    <string name="contact_subject">Mesaj Gönder? Hakkında</string>
 
 </resources>

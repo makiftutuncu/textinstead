@@ -3,7 +3,7 @@ package com.mehmetakiftutuncu.textinstead.models;
 /**
  * Model class for a single call information read from device's call log
  * 
- * @author Mehmet Akif TÃ¼tÃ¼ncÃ¼
+ * @author Mehmet Akif Tütüncü
  */
 public class CallLogEntry
 {

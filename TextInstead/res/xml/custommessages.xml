@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <EditTextPreference
+        android:key="preference_messages_1"
+        android:title="@string/preferences_messages_1" />
+    <EditTextPreference
+        android:key="preference_messages_2"
+        android:title="@string/preferences_messages_2" />
+    <EditTextPreference
+        android:key="preference_messages_3"
+        android:title="@string/preferences_messages_3" />
+    <EditTextPreference
+        android:key="preference_messages_4"
+        android:title="@string/preferences_messages_4" />
+    <EditTextPreference
+        android:key="preference_messages_5"
+        android:title="@string/preferences_messages_5" />
+
+</PreferenceScreen>
