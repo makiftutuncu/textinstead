@@ -145,7 +145,7 @@ public class QuestionActivity extends Activity
 					}
 				}
 			});
-    		dialogBuilder.setIcon(R.drawable.app_icon_web);
+    		dialogBuilder.setIcon(R.drawable.app_icon);
     		
     		dialog = dialogBuilder.create();
     		dialog.setOnCancelListener(mDialogCancelListener);
