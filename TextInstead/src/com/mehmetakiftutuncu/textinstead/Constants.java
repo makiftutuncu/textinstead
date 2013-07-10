@@ -1,5 +1,7 @@
 package com.mehmetakiftutuncu.textinstead;
 
+import com.mehmetakiftutuncu.textinstead.activities.DialogActivity;
+
 /**
  * Constant definitions
  * 
@@ -11,10 +13,32 @@ public class Constants
 	public static final String EXTRA_NAME = "name";
 	/**	Number of the person who is just called */
 	public static final String EXTRA_NUMBER = "number";
+	/**	Optional reminder message for the notification */
+	public static final String EXTRA_REMINDER_MESSAGE = "reminderMessage";
+	
+	/**	Intent action for directly sending sms
+	 * 
+	 * If the {@link DialogActivity} is started having this action,
+	 * it will directly show send sms dialog for the number given in {@link #EXTRA_NUMBER}
+	 * 
+	 * This action will be set through the action button in the reminder notification. */
+	public static final String ACTION_SEND_SMS = "com.mehmetakiftutuncu.textinstead.sendsms";
+	/**	Intent action for directly calling again
+	 * 
+	 * If the {@link DialogActivity} is started having this action,
+	 * it will directly call the number given in {@link #EXTRA_NUMBER}
+	 * 
+	 * This action will be set through the action button in the reminder notification. */
+	public static final String ACTION_CALL_AGAIN = "com.mehmetakiftutuncu.textinstead.callagain";
+	
 	/**	URI for an sms */
 	public static final String URI_SMS = "sms:";
 	/**	URI for the body of an sms */
 	public static final String URI_SMS_BODY = "sms_body";
+	/**	URI for a call */
+	public static final String URI_CALL = "tel:";
+	/**	URI for default notification sound */
+	public static final String URI_DEFAULT_NOTIFICATION_SOUND = "content://settings/system/notification_sound";
 	
 	/**	Preference for the status of the application */
 	public static final String PREFERENCE_STATUS = "preference_status";
@@ -31,6 +55,12 @@ public class Constants
 		"preference_messages_4",
 		"preference_messages_5"
 	};
+	/**	Preference for the status of the sound of the reminder notifications */
+	public static final String PREFERENCE_NOTIFICATION_SOUND_STATUS = "preference_reminder_sound_status";
+	/**	Preference for the sound of the reminder notifications */
+	public static final String PREFERENCE_NOTIFICATION_SOUND = "preference_reminder_sound";
+	/**	Preference for the vibration of the reminder notifications */
+	public static final String PREFERENCE_VIBRATION = "preference_reminder_vibration";
 	
 	/**	URI of Text Instead in Play Store */
 	public static final String APPLICATION_URI = "market://details?id=com.mehmetakiftutuncu.textinstead";

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/preferences_reminder" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preference_reminder_sound_status"
+            android:switchTextOff="@string/status_off"
+            android:switchTextOn="@string/status_on"
+            android:title="@string/preferences_reminder_sound_status" />
+        
+        <RingtonePreference
+            android:key="preference_reminder_sound"
+            android:ringtoneType="notification"
+            android:showDefault="true"
+            android:dependency="preference_reminder_sound_status"
+            android:title="@string/preferences_reminder_sound" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="preference_reminder_vibration"
+            android:switchTextOff="@string/status_off"
+            android:switchTextOn="@string/status_on"
+            android:title="@string/preferences_reminder_vibration" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

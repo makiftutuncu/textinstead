@@ -3,21 +3,38 @@
 
     <string name="app_name">Mesaj Gönder?</string>
     
-    <string name="unknown_name">Bilinmeyen</string>
+    <string name="unregistered_contact">(Kaydedilmemiş)</string>
+    
+    <string name="status_on">Açık</string>
+    <string name="status_off">Kapalı</string>
     
     <string name="main_status">Mesaj Gönder? şu an</string>
     <string name="main_status_enabled">ETKİN</string>
     <string name="main_status_disabled">DEVRE DIŞI</string>
     <string name="main_hint">Uygulamayı etkinleştirmek veya devre dışı bırakmak için simgeye dokunun.</string>
     
-    <string name="dialog_title">Mesaj Gönder?</string>
-    <string name="dialog_message">Aradığınız\n\n%1$s (%2$s)\n\nkişisine telefonla ulaşamadınız. Bunun yerine mesaj göndermek ister misiniz?</string>
-    <string name="dialog_writeMessage">Mesaj Yaz</string>
-    <string name="dialog_selectMessage">Mesaj Seç</string>
-    <string name="dialog_cancel">İptal</string>
+    <string name="questionDialog_title">Ne Yapmak İstersiniz?</string>
+    <string name="questionDialog_message">Aradığınız\n\n%1$s - %2$s\n\nkişisine telefonla ulaşamadınız.</string>
+    <string name="questionDialog_sendSms">Mesaj Gönder</string>
+    <string name="questionDialog_callAgain">Tekrar Ara</string>
+    <string name="questionDialog_remindLater">Daha Sonra Hatırlat</string>
     
-    <string name="listDialog_title">Kullanılacak Kişisel Mesajı Seçin</string>
-    <string name="listDialog_error">Belirlenmiş kişisel mesaj yok. Uygulamanın tercihlerinden belirleyebilirsiniz.</string>
+    <string name="messageDialog_title">Bir Mesaj Seçin</string>
+    <string name="messageDialog_newSms">&lt; Yeni Mesaj Yaz &gt;</string>
+    <string name="messageDialog_error">Belirlenmiş kişisel mesaj yok. Kişisel mesajlarınızı uygulamanın tercihlerinden belirleyebilirsiniz.</string>
+    <string name="messageDialog_cancel">İptal</string>
+    
+    <string name="reminderDialog_title">Hatırlatıcınızı Ayarlayın</string>
+    <string name="reminderDialog_info">Hatırlatıcının ne kadar zaman sonra çalışacağını seçin. (Saat:Dakika)</string>
+    <string name="reminderDialog_hint">İsteğe Bağlı Hatırlatıcı Mesaj</string>
+    <string name="reminderDialog_set">Ayarla</string>
+    <string name="reminderDialog_cancel">İptal</string>
+    
+    <string name="reminderNotification_title">%1$s - %2$s</string>
+    <string name="reminderNotification_text">Bu kişiye ulaşamadınız.</string>
+    <string name="reminderNotification_ticker">%1$s - %2$s kişisini arayın veya ona mesaj gönderin!</string>
+    <string name="reminderNotification_sendSms">Mesaj Gönder</string>
+    <string name="reminderNotification_callAgain">Tekrar Ara</string>
     
     <string name="aboutDialog_title">%1$s Hakkında</string>
     <string name="aboutDialog_message">Bu uygulama Mehmet Akif Tütüncü tarafından geliştirilmiştir.\n\nUygulama tamamen ücretsizdir. Dilediğiniz gibi kullanabilirsiniz.\n\nUygulamanın kaynak kodlarına erişmek istiyorsanız geliştiriciye bu konuda bir eposta gönderebilirsiniz.\n\nLütfen görüşleriniz, önerilerinizi ve aldığınız hataları geliştiriciye bildiriniz.\n\nAradıklarınıza ulaşabilmeniz dileğiyle&#8230;</string>
@@ -25,7 +42,7 @@
     
     <string name="preferences_general_title">Genel</string>
     <string name="preferences_delay_title">Gecikme (Saniye)</string>
-    <string name="preferences_delay_summary">Çağrıdan sonraki pencere bu süre sonunda görüntülenecek.</string>
+    <string name="preferences_delay_summary">Çağrıdan sonraki pencere %1$s saniye sonra görüntülenecek.</string>
     <string name="preferences_messages">Kişisel Mesajlar</string>
     <string name="preferences_messages_summary">Göndermek için seçeceğiniz mesajları önceden belirleyin.</string>
     <string name="preferences_messages_1">Mesaj 1</string>
@@ -34,6 +51,10 @@
     <string name="preferences_messages_4">Mesaj 4</string>
     <string name="preferences_messages_5">Mesaj 5</string>
     <string name="preferences_messages_notSet">(Belirlenmemiş)</string>
+    <string name="preferences_reminder">Hatırlatıcı</string>
+    <string name="preferences_reminder_sound_status">Ses</string>
+    <string name="preferences_reminder_sound">Bildirim Sesi</string>
+    <string name="preferences_reminder_vibration">Titreşim</string>
     
     <string name="menu_more">Daha Fazla</string>
     <string name="menu_rate">Oy Verin/Yorum Yapın</string>

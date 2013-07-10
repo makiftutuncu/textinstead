@@ -22,7 +22,7 @@ import com.mehmetakiftutuncu.textinstead.utilities.MenuHandler;
  * @author Mehmet Akif Tütüncü
  */
 @SuppressWarnings("deprecation")
-public class CustomMessagesActivity extends SherlockPreferenceActivity implements OnSharedPreferenceChangeListener
+public class CustomMessagesPreferenceActivity extends SherlockPreferenceActivity implements OnSharedPreferenceChangeListener
 {
 	/** Preferences object to read and write preferences */
 	private SharedPreferences mPreferences;
@@ -40,7 +40,7 @@ public class CustomMessagesActivity extends SherlockPreferenceActivity implement
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.custommessages);
+        addPreferencesFromResource(R.xml.custommessages_preferences);
         
         initialize();
     }
@@ -108,25 +108,6 @@ public class CustomMessagesActivity extends SherlockPreferenceActivity implement
         	(EditTextPreference) getPreferenceScreen().findPreference(Constants.PREFERENCE_MESSAGES_LIST[3]),
         	(EditTextPreference) getPreferenceScreen().findPreference(Constants.PREFERENCE_MESSAGES_LIST[4])
 		};
-        
-        /*
-		AlertDialog dialog;
-    	AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(PreferencesActivity.this);
-    	
-    	dialogBuilder.setTitle(getString(R.string.aboutDialog_title, getString(R.string.app_name)));
-    	dialogBuilder.setMessage(getString(R.string.aboutDialog_message));
-    	dialogBuilder.setIcon(R.drawable.app_icon);
-    	dialogBuilder.setPositiveButton(getString(R.string.aboutDialog_ok), new OnClickListener()
-    	{
-			@Override
-			public void onClick(DialogInterface dialog, int which)
-			{
-			}
-		});
-		
-		dialog = dialogBuilder.create();
-		dialog.show();
-		*/
         
         // Update the message summaries to show saved messages at the beginning
         updateMessageSummaries();

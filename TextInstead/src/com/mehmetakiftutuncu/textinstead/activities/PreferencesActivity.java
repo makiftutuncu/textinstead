@@ -2,11 +2,17 @@ package com.mehmetakiftutuncu.textinstead.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceManager;
+import android.preference.RingtonePreference;
+import android.util.Log;
 import android.view.KeyEvent;
 
 import com.actionbarsherlock.app.SherlockPreferenceActivity;
@@ -23,13 +29,19 @@ import com.mehmetakiftutuncu.textinstead.utilities.MenuHandler;
  * @author Mehmet Akif Tütüncü
  */
 @SuppressWarnings("deprecation")
-public class PreferencesActivity extends SherlockPreferenceActivity implements OnSharedPreferenceChangeListener
+public class PreferencesActivity extends SherlockPreferenceActivity
 {
 	/** Preferences object to read and write preferences */
 	private SharedPreferences mPreferences;
 	
+	/** Preference for delay */
+	private ListPreference mDelayPreference;
+	
 	/** Preference for custom messages */
 	private Preference mMessages;
+	
+	/** Preference for notification sound */
+	private RingtonePreference mSoundPreference;
 	
 	/** A reference to the overflow menu */
 	private Menu mMenu;
@@ -41,15 +53,11 @@ public class PreferencesActivity extends SherlockPreferenceActivity implements O
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.preferences);
+        addPreferencesFromResource(R.xml.general_preferences);
+        addPreferencesFromResource(R.xml.reminder_preferences);
         
         initialize();
     }
-	
-	@Override
-	public void onSharedPreferenceChanged(SharedPreferences preferences, String key)
-	{
-	}
 	
 	/* Checks the menu key press event to toggle the overflow menu manually
 	 * 
@@ -102,7 +110,25 @@ public class PreferencesActivity extends SherlockPreferenceActivity implements O
 	{
 		// Initialize preferences
 		mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        mPreferences.registerOnSharedPreferenceChangeListener(this);
+		
+		if(!mPreferences.contains(Constants.PREFERENCE_NOTIFICATION_SOUND))
+		{
+			mPreferences.edit().putString(Constants.PREFERENCE_NOTIFICATION_SOUND, Constants.URI_DEFAULT_NOTIFICATION_SOUND).commit();
+		}
+		
+		mDelayPreference = (ListPreference) findPreference(Constants.PREFERENCE_DELAY);
+		mDelayPreference.setOnPreferenceChangeListener(new OnPreferenceChangeListener()
+		{
+			@Override
+			public boolean onPreferenceChange(Preference preference, Object newValue)
+			{
+				updateDelaySummary((String) newValue);
+				
+				return true;
+			}
+		});
+        
+        updateDelaySummary(mPreferences.getString(Constants.PREFERENCE_DELAY, "" + 2));
         
         mMessages = findPreference(Constants.PREFERENCE_MESSAGES);
         mMessages.setOnPreferenceClickListener(new OnPreferenceClickListener()
@@ -110,14 +136,45 @@ public class PreferencesActivity extends SherlockPreferenceActivity implements O
 			@Override
 			public boolean onPreferenceClick(Preference preference)
 			{
-				Intent intent = new Intent(PreferencesActivity.this, CustomMessagesActivity.class);
+				Intent intent = new Intent(PreferencesActivity.this, CustomMessagesPreferenceActivity.class);
 				startActivity(intent);
 				
 				return true;
 			}
 		});
         
+        mSoundPreference = (RingtonePreference) findPreference(Constants.PREFERENCE_NOTIFICATION_SOUND);
+        mSoundPreference.setOnPreferenceChangeListener(new OnPreferenceChangeListener()
+        {
+			@Override
+			public boolean onPreferenceChange(Preference preference, Object newValue)
+			{
+				updateSoundSummary((String) newValue);
+				
+				return true;
+			}
+		});
+        
+        updateSoundSummary(mPreferences.getString(Constants.PREFERENCE_NOTIFICATION_SOUND, Constants.URI_DEFAULT_NOTIFICATION_SOUND));
+        
         // Show home button in the ActionBar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+	}
+	
+	private void updateDelaySummary(String newValue)
+	{
+		mDelayPreference.setSummary(getString(R.string.preferences_delay_summary, newValue));
+		
+		Log.d(DEBUG_TAG, "Updating delay to " + newValue);
+	}
+	
+	private void updateSoundSummary(String newValue)
+	{
+		Ringtone ringtone = RingtoneManager.getRingtone(PreferencesActivity.this, Uri.parse(newValue));
+		String name = ringtone.getTitle(PreferencesActivity.this);
+		
+		mSoundPreference.setSummary(name);
+		
+		Log.d(DEBUG_TAG, "Updating sound to " + name);
 	}
 }

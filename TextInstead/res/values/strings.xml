@@ -3,21 +3,38 @@
 
     <string name="app_name">Text Instead?</string>
     
-    <string name="unknown_name">Unknown</string>
+    <string name="unregistered_contact">(Unregistered)</string>
+    
+    <string name="status_on">On</string>
+    <string name="status_off">Off</string>
     
     <string name="main_status">Text Instead? is now</string>
     <string name="main_status_enabled">ENABLED</string>
     <string name="main_status_disabled">DISABLED</string>
     <string name="main_hint">Touch the icon to enable or disable the application.</string>
     
-    <string name="dialog_title">Text Instead?</string>
-    <string name="dialog_message">You couldn\'t reach\n\n%1$s (%2$s)\n\nvia phone call. Would you like to text instead?</string>
-    <string name="dialog_writeMessage">Write Message</string>
-    <string name="dialog_selectMessage">Select Message</string>
-    <string name="dialog_cancel">No</string>
+    <string name="questionDialog_title">What Would You Like to Do?</string>
+    <string name="questionDialog_message">You couldn\'t reach\n\n%1$s - %2$s\n\nvia phone call.</string>
+    <string name="questionDialog_sendSms">Send Message</string>
+    <string name="questionDialog_callAgain">Call Again</string>
+    <string name="questionDialog_remindLater">Remind Me Later</string>
     
-    <string name="listDialog_title">Select Your Custom Messages To Use</string>
-    <string name="listDialog_error">There is no custom message defined. You can define your custom messages from application preferences.</string>
+    <string name="messageDialog_title">Select a Message</string>
+    <string name="messageDialog_newSms">&lt; Write a New Message &gt;</string>
+    <string name="messageDialog_error">There is no custom message defined. You can define your custom messages from application preferences.</string>
+    <string name="messageDialog_cancel">Cancel</string>
+    
+    <string name="reminderDialog_title">Set Your Reminder</string>
+    <string name="reminderDialog_info">Select after how much time reminder will run. (Hours:Minutes)</string>
+    <string name="reminderDialog_hint">Optional Reminder Message</string>
+    <string name="reminderDialog_set">Set</string>
+    <string name="reminderDialog_cancel">Cancel</string>
+    
+    <string name="reminderNotification_title">%1$s - %2$s</string>
+    <string name="reminderNotification_text">You couldn\'t reach this person.</string>
+    <string name="reminderNotification_ticker">Call or text %1$s - %2$s!</string>
+    <string name="reminderNotification_sendSms">Send Message</string>
+    <string name="reminderNotification_callAgain">Call Again</string>
     
     <string name="aboutDialog_title">About %1$s</string>
     <string name="aboutDialog_message">This application is developed by Mehmet Akif Tütüncü.\n\nThe application is completely free. You can use it however you like.\n\nIf you are interested in the source codes of the application, you can send an email about this to the developer.\n\nPlease let the developer know about your opinions, suggestions and errors.\n\nHope you can reach the people you call&#8230;</string>
@@ -25,7 +42,7 @@
     
     <string name="preferences_general_title">General</string>
     <string name="preferences_delay_title">Delay (Seconds)</string>
-    <string name="preferences_delay_summary">Dialog after the call will be shown after this time.</string>
+    <string name="preferences_delay_summary">Dialog after the call will be shown after %1$s second(s).</string>
     <string name="preferences_messages">Custom Messages</string>
     <string name="preferences_messages_summary">Pre-define your custom messages to pick later.</string>
     <string name="preferences_messages_1">Message 1</string>
@@ -34,6 +51,10 @@
     <string name="preferences_messages_4">Message 4</string>
     <string name="preferences_messages_5">Message 5</string>
     <string name="preferences_messages_notSet">(Not defined)</string>
+    <string name="preferences_reminder">Reminder</string>
+    <string name="preferences_reminder_sound_status">Sound</string>
+    <string name="preferences_reminder_sound">Notification Sound</string>
+    <string name="preferences_reminder_vibration">Vibration</string>
     
     <string name="menu_more">More</string>
     <string name="menu_rate">Rate/Comment</string>

@@ -11,7 +11,8 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import com.mehmetakiftutuncu.textinstead.Constants;
-import com.mehmetakiftutuncu.textinstead.activities.QuestionActivity;
+import com.mehmetakiftutuncu.textinstead.R;
+import com.mehmetakiftutuncu.textinstead.activities.DialogActivity;
 import com.mehmetakiftutuncu.textinstead.models.CallLogEntry;
 
 /**
@@ -111,7 +112,7 @@ public class CallListenerService extends Service
 										c.getString(callType),
 										c.getString(name));
 			
-			Log.d(DEBUG_TAG, "Last call:" + lastCall);
+			Log.d(DEBUG_TAG, "Last call: " + lastCall);
         }
         
         // Return the resulting object
@@ -158,8 +159,13 @@ public class CallListenerService extends Service
 	        	{
 	        		Log.d(DEBUG_TAG, "Taking action!");
 	        		
+	        		if(lastCall.getName() == null || lastCall.getName().equals(""))
+	        		{
+	        			lastCall.setName(getString(R.string.unregistered_contact));
+	        		}
+	        		
 	        		// Start the question dialog activity
-	        		Intent intent = new Intent(getApplicationContext(), QuestionActivity.class);
+	        		Intent intent = new Intent(getApplicationContext(), DialogActivity.class);
 	        		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 	        		intent.putExtra(Constants.EXTRA_NAME, lastCall.getName());
 	        		intent.putExtra(Constants.EXTRA_NUMBER, lastCall.getNumber());
