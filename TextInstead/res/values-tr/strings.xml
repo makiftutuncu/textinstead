@@ -7,6 +7,8 @@
     
     <string name="status_on">Açık</string>
     <string name="status_off">Kapalı</string>
+    <string name="dialog_ok">Tamam</string>
+    <string name="dialog_cancel">İptal</string>
     
     <string name="main_status">Mesaj Gönder? şu an</string>
     <string name="main_status_enabled">ETKİN</string>
@@ -22,13 +24,11 @@
     <string name="messageDialog_title">Bir Mesaj Seçin</string>
     <string name="messageDialog_newSms">&lt; Yeni Mesaj Yaz &gt;</string>
     <string name="messageDialog_error">Belirlenmiş kişisel mesaj yok. Kişisel mesajlarınızı uygulamanın tercihlerinden belirleyebilirsiniz.</string>
-    <string name="messageDialog_cancel">İptal</string>
     
     <string name="reminderDialog_title">Hatırlatıcınızı Ayarlayın</string>
     <string name="reminderDialog_info">Hatırlatıcının ne kadar zaman sonra çalışacağını seçin. (Saat:Dakika)</string>
     <string name="reminderDialog_hint">İsteğe Bağlı Hatırlatıcı Mesaj</string>
     <string name="reminderDialog_set">Ayarla</string>
-    <string name="reminderDialog_cancel">İptal</string>
     
     <string name="reminderNotification_title">%1$s - %2$s</string>
     <string name="reminderNotification_text">Bu kişiye ulaşamadınız.</string>
@@ -36,9 +36,13 @@
     <string name="reminderNotification_sendSms">Mesaj Gönder</string>
     <string name="reminderNotification_callAgain">Tekrar Ara</string>
     
-    <string name="aboutDialog_title">%1$s Hakkında</string>
-    <string name="aboutDialog_message">Bu uygulama Mehmet Akif Tütüncü tarafından geliştirilmiştir.\n\nUygulama tamamen ücretsizdir. Dilediğiniz gibi kullanabilirsiniz.\n\nUygulamanın kaynak kodlarına erişmek istiyorsanız geliştiriciye bu konuda bir eposta gönderebilirsiniz.\n\nLütfen görüşleriniz, önerilerinizi ve aldığınız hataları geliştiriciye bildiriniz.\n\nAradıklarınıza ulaşabilmeniz dileğiyle&#8230;</string>
-    <string name="aboutDialog_ok">Tamam</string>
+    <string name="helpDialog_title">Yardım</string>
+    <string name="helpDialog_message_main">Mesaj Gönder? uygulamasına hoş geldiniz.\n\nBu uygulama size yaptığınız telefon çağrıları başarısız olduğunda önceden tanımlayabileceğiniz ve kişiselleştirebileceğiniz mesajlar göndermek, o kişiyi yeniden aramak ve daha sonra tekrar denemek için hatırlatıcı ayarlamak gibi gelişmiş seçenekler sunar.\n\nUygulama tercihlerine ve ek seçeneklere erişmek için ekranın üst kısmındaki şeritte yer alan düğmeleri kullanabilirsiniz.</string>
+    <string name="helpDialog_message_preferences">Tercihler ekranına hoş geldiniz.\n\nBu ekranda,\n\n* Başarısız çağrı sonrasında görüntülenecek pencerenin ne kadar süre sonra görüntülenmesi gerektiğini belirleyebilirsiniz.\n\n* Mesaj gönderirken kullanabileceğiniz kişisel mesajlarınızı önceden belirleyebilirsiniz.\n\n* Ayarlayacağınız hatırlatıcılar için ses ve titreşim ayarlarını belirleyebilirsiniz.</string>
+    <string name="helpDialog_message_messages" formatted="false">Kişisel Mesajlar ekranına hoş geldiniz.\n\nBu ekranda mesaj gönderirken kullanabileceğiniz kişisel mesajlarınızı önceden belirleyebilirsiniz.\n\nMesajlarınızda bazı değişkenler kullanabilirsiniz. Mesajınıza yazacağınız özel karakterler mesajı kullanacağınız zaman gerçek değerleriyle değiştirilir ve böylece kişiselleştirilmiş mesajlar elde edersiniz. Aşağıdaki değişkenleri kullanabilirsiniz:\n\n%1% = kişinin ilk adı\n%2% = kişinin tam adı\n\nÖrnek olarak; adı \"Mehmet Aslan\" olan bir kişi için\n\n\"Beni arar mısın %1%?\" mesajı \"Beni arar mısın Mehmet?\" mesajına,\n\n\"Beni arar mısın %2%?\" mesajı \"Beni arar mısın Mehmet Aslan?\" mesajına dönüştürülecektir.</string>
+    
+    <string name="aboutDialog_title">Mesaj Gönder? Hakkında</string>
+    <string name="aboutDialog_message">Bu uygulama Mehmet Akif Tütüncü tarafından geliştirilmiştir.\n\nUygulama tamamen ücretsizdir. Dilediğiniz gibi kullanabilirsiniz.\n\nUygulamanın kaynak kodlarına erişmek istiyorsanız geliştiriciye bu konuda bir eposta gönderebilirsiniz.\n\nLütfen görüşlerinizi, önerilerinizi ve aldığınız hataları geliştiriciye bildiriniz.\n\nAradıklarınıza ulaşabilmeniz dileğiyle&#8230;</string>
     
     <string name="preferences_general_title">Genel</string>
     <string name="preferences_delay_title">Gecikme (Saniye)</string>

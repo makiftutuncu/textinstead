@@ -94,14 +94,12 @@ public class ReminderBroadcastReceiver extends BroadcastReceiver
     		if(sound != null)
     		{
     			notification.sound = !sound.equals("") ? Uri.parse(sound) : Uri.parse(Constants.URI_DEFAULT_NOTIFICATION_SOUND);
-    			//notificationBuilder.setSound(!sound.equals("") ? Uri.parse(sound) : Uri.parse(Constants.URI_DEFAULT_NOTIFICATION_SOUND));
     		}
     	}
     	
 		if(vibrate)
 		{
 			notification.defaults |= Notification.DEFAULT_VIBRATE;
-			//notificationBuilder.setVibrate(null);
 		}
 		
 		NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);

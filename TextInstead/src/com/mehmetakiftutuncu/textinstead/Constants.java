@@ -9,6 +9,13 @@ import com.mehmetakiftutuncu.textinstead.activities.DialogActivity;
  */
 public class Constants
 {
+	/**	Flag to check if it is the first time of running for main activity */
+	public static final String IS_FIRST_TIME_MAIN = "isFirstTimeMain";
+	/**	Flag to check if it is the first time of running for preferences activity */
+	public static final String IS_FIRST_TIME_PREFERENCES = "isFirstTimePreferences";
+	/**	Flag to check if it is the first time of running for custom messages activity */
+	public static final String IS_FIRST_TIME_CUSTOM_MESSAGES = "isFirstTimeCustomMessages";
+	
 	/**	Name of the person who is just called */
 	public static final String EXTRA_NAME = "name";
 	/**	Number of the person who is just called */
@@ -30,6 +37,11 @@ public class Constants
 	 * 
 	 * This action will be set through the action button in the reminder notification. */
 	public static final String ACTION_CALL_AGAIN = "com.mehmetakiftutuncu.textinstead.callagain";
+	
+	/**	Variable for the name of the person */
+	public static final String CUSTOM_MESSAGE_VARIABLE_NAME = "%1%";
+	/**	Variable for the full name of the person */
+	public static final String CUSTOM_MESSAGE_VARIABLE_FULL_NAME = "%2%";
 	
 	/**	URI for an sms */
 	public static final String URI_SMS = "sms:";

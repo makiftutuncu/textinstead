@@ -57,11 +57,11 @@ public class MenuHandler
 					break;
 					
 				case R.id.item_help:
-					// Show help
+					Dialogs.showHelpDialog(context);
 					break;
 					
 				case R.id.item_about:
-					// Show about
+					Dialogs.showAboutDialog(context);
 					break;
 			}
 		}

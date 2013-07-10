@@ -30,15 +30,19 @@ public class DialogActivity extends Activity
         // If there are some extras
         if(extras != null)
         {
-        	// Get number of the last call
+        	// Get number of the last call and name of the last call and then show question dialog
         	String number = extras.getString(Constants.EXTRA_NUMBER);
+        	String name = extras.getString(Constants.EXTRA_NAME);
         	
+        	// If the activity is started with an action
         	if(getIntent().getAction() != null)
         	{
         		// Activity is started through the send sms action button in reminder notification
             	if(getIntent().getAction().equals(Constants.ACTION_SEND_SMS))
             	{
-            		new Dialogs(this, "", number).showMessagesDialog();
+            		Log.d(DEBUG_TAG, "Send sms action is clicked. Going to show messages dialog for [Name: " + name + ", Number: " + number + "]");
+            		
+            		new Dialogs(this, name, number).showMessagesDialog();
             		
             		NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             		notificationManager.cancelAll();
@@ -49,7 +53,9 @@ public class DialogActivity extends Activity
             	// Activity is started through the call again action button in reminder notification
             	if(getIntent().getAction().equals(Constants.ACTION_CALL_AGAIN))
             	{
-            		new Dialogs(this, "", number).callNumber();
+            		Log.d(DEBUG_TAG, "Call aga'n action is clicked. Going to call [Name: " + name + ", Number: " + number + "]");
+            		
+            		new Dialogs(this, name, number).callNumber();
             		
             		NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             		notificationManager.cancelAll();
@@ -58,9 +64,7 @@ public class DialogActivity extends Activity
             	}
         	}
         	
-        	// Activity started normally. Get name of the last call and then show question dialog
-        	String name = extras.getString(Constants.EXTRA_NAME);
-        	
+        	// Activity started normally. Show question dialog
         	Log.d(DEBUG_TAG, "Going to show question dialog for [Name: " + name + ", Number: " + number + "]");
         	
         	new Dialogs(this, name, number).showQuestionDialog();

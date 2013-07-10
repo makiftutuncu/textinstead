@@ -25,6 +25,9 @@ import android.widget.Toast;
 
 import com.mehmetakiftutuncu.textinstead.Constants;
 import com.mehmetakiftutuncu.textinstead.R;
+import com.mehmetakiftutuncu.textinstead.activities.CustomMessagesPreferenceActivity;
+import com.mehmetakiftutuncu.textinstead.activities.MainActivity;
+import com.mehmetakiftutuncu.textinstead.activities.PreferencesActivity;
 import com.mehmetakiftutuncu.textinstead.broadcastreceivers.ReminderBroadcastReceiver;
 
 /**
@@ -119,12 +122,26 @@ public class Dialogs
 		// Read defined custom messages
 		ArrayList<String> messages = new ArrayList<String>();
 		
+		String unregistered = mContext.getString(R.string.unregistered_contact);
+		
 		for(String i : Constants.PREFERENCE_MESSAGES_LIST)
 		{
 			String j = PreferenceManager.getDefaultSharedPreferences(mContext).getString(i, "");
 			
 			if(!j.equals(""))
 			{
+				// Replace variables if there's any
+				if(!mName.equals(unregistered))
+				{
+					j = j.replaceAll(Constants.CUSTOM_MESSAGE_VARIABLE_NAME, getFirstName(mName));
+					j = j.replaceAll(Constants.CUSTOM_MESSAGE_VARIABLE_FULL_NAME, mName);
+				}
+				else
+				{
+					j = j.replaceAll(Constants.CUSTOM_MESSAGE_VARIABLE_NAME, "");
+					j = j.replaceAll(Constants.CUSTOM_MESSAGE_VARIABLE_FULL_NAME, "");
+				}
+				
 				messages.add(j);
 			}
 		}
@@ -165,7 +182,7 @@ public class Dialogs
 					}
 				}
 			});
-        	messagesDialogBuilder.setNegativeButton(mContext.getString(R.string.messageDialog_cancel), new OnClickListener()
+        	messagesDialogBuilder.setNegativeButton(mContext.getString(R.string.dialog_cancel), new OnClickListener()
     		{
     			@Override
     			public void onClick(DialogInterface dialog, int which)
@@ -230,7 +247,7 @@ public class Dialogs
 				createReminder(timePicker.getCurrentHour(), timePicker.getCurrentMinute(), message.equals("") ? mContext.getString(R.string.reminderNotification_text) : message);
 			}
 		});
-		dialogBuilder.setNegativeButton(mContext.getString(R.string.reminderDialog_cancel), new OnClickListener()
+		dialogBuilder.setNegativeButton(mContext.getString(R.string.dialog_cancel), new OnClickListener()
 		{
 			@Override
 			public void onClick(DialogInterface dialog, int which)
@@ -253,6 +270,75 @@ public class Dialogs
 		});
 		dialog.show();
 	}
+	
+	/**
+     * Shows the help dialog either because it was the first time of that activity or user selected help in the menu
+     * 
+     * @param context Context of the activity
+     */
+	public static void showHelpDialog(Context context)
+	{
+		AlertDialog dialog;
+    	AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
+    	
+    	Log.d(DEBUG_TAG, "Creating help dialog...");
+    	
+    	// Start preparing dialog
+		dialogBuilder.setTitle(context.getString(R.string.helpDialog_title));
+		if(((Activity) context) instanceof MainActivity)
+		{
+			dialogBuilder.setMessage(context.getString(R.string.helpDialog_message_main));
+		}
+		else if(((Activity) context) instanceof PreferencesActivity)
+		{
+			dialogBuilder.setMessage(context.getString(R.string.helpDialog_message_preferences));
+		}
+		else if(((Activity) context) instanceof CustomMessagesPreferenceActivity)
+		{
+			dialogBuilder.setMessage(context.getString(R.string.helpDialog_message_messages));
+		}
+		dialogBuilder.setPositiveButton(context.getString(R.string.dialog_ok), new OnClickListener()
+		{
+			@Override
+			public void onClick(DialogInterface dialog, int which)
+			{
+				dialog.cancel();
+			}
+		});
+		dialogBuilder.setIcon(R.drawable.app_icon);
+		
+		dialog = dialogBuilder.create();
+		dialog.show();
+	}
+	
+	/**
+     * Shows the about dialog when user selected about in the menu
+     * 
+     * @param context Context of the activity
+     */
+	public static void showAboutDialog(Context context)
+	{
+		AlertDialog dialog;
+    	AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
+    	
+    	Log.d(DEBUG_TAG, "Creating about dialog...");
+    	
+    	// Start preparing dialog
+		dialogBuilder.setTitle(context.getString(R.string.aboutDialog_title));
+		dialogBuilder.setMessage(context.getString(R.string.aboutDialog_message));
+		dialogBuilder.setPositiveButton(context.getString(R.string.dialog_ok), new OnClickListener()
+		{
+			@Override
+			public void onClick(DialogInterface dialog, int which)
+			{
+				dialog.cancel();
+			}
+		});
+		dialogBuilder.setIcon(R.drawable.app_icon);
+		
+		dialog = dialogBuilder.create();
+		dialog.show();
+	}
     
     /**
      * Starts an sms activity with provided information
@@ -268,7 +354,7 @@ public class Dialogs
 		intent.putExtra(Constants.URI_SMS_BODY, message);
 		
 		((Activity) mContext).finish();
-		mContext.startActivity(intent);
+		mContext.startActivity(Intent.createChooser(intent, mContext.getString(R.string.questionDialog_sendSms)));
     }
     
     /**
@@ -320,4 +406,9 @@ public class Dialogs
 		
 		((Activity) mContext).finish();
     }
+    
+    private String getFirstName(String name)
+    {
+		return name.split(" ")[0];
+	}
 }

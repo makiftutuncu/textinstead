@@ -15,6 +15,7 @@ import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.mehmetakiftutuncu.textinstead.Constants;
 import com.mehmetakiftutuncu.textinstead.R;
+import com.mehmetakiftutuncu.textinstead.utilities.Dialogs;
 import com.mehmetakiftutuncu.textinstead.utilities.MenuHandler;
 
 /**
@@ -106,6 +107,14 @@ public class MainActivity extends SherlockActivity
 	{
 		mPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 		
+		// Check if it is the first time and show the help dialog if it is
+		if(mPreferences.getBoolean(Constants.IS_FIRST_TIME_MAIN, true))
+		{
+			Dialogs.showHelpDialog(this);
+			mPreferences.edit().putBoolean(Constants.IS_FIRST_TIME_MAIN, false).commit();
+		}
+		
+		// Define the status of the application
 		if(!mPreferences.contains(Constants.PREFERENCE_STATUS))
 		{
 			mStatus = true;

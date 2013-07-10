@@ -7,6 +7,8 @@
     
     <string name="status_on">On</string>
     <string name="status_off">Off</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
     
     <string name="main_status">Text Instead? is now</string>
     <string name="main_status_enabled">ENABLED</string>
@@ -22,13 +24,11 @@
     <string name="messageDialog_title">Select a Message</string>
     <string name="messageDialog_newSms">&lt; Write a New Message &gt;</string>
     <string name="messageDialog_error">There is no custom message defined. You can define your custom messages from application preferences.</string>
-    <string name="messageDialog_cancel">Cancel</string>
     
     <string name="reminderDialog_title">Set Your Reminder</string>
     <string name="reminderDialog_info">Select after how much time reminder will run. (Hours:Minutes)</string>
     <string name="reminderDialog_hint">Optional Reminder Message</string>
     <string name="reminderDialog_set">Set</string>
-    <string name="reminderDialog_cancel">Cancel</string>
     
     <string name="reminderNotification_title">%1$s - %2$s</string>
     <string name="reminderNotification_text">You couldn\'t reach this person.</string>
@@ -36,9 +36,13 @@
     <string name="reminderNotification_sendSms">Send Message</string>
     <string name="reminderNotification_callAgain">Call Again</string>
     
-    <string name="aboutDialog_title">About %1$s</string>
+    <string name="helpDialog_title">Help</string>
+    <string name="helpDialog_message_main">Welcome to Text Instead? application.\n\nThis application provides you with advanced features like sending messages that you can pre-define and customize for sending after an unsuccessful outgoing call you make, calling that person again and setting a reminder to try again later.\n\nYou can access application preferences and extra options from the buttons on the bar at the top of the screen.</string>
+    <string name="helpDialog_message_preferences">Welcome to Preferences screen.\n\nIn this screen,\n\n* You can set after how much time the window that is shown after an unsuccessful call should be shown.\n\n* You can pre-define your custom messages that you can use while sending messages.\n\n* You can set sound and vibration options for the reminders that you will set.</string>
+    <string name="helpDialog_message_messages" formatted="false">Welcome to Custom Messages screen.\n\nIn this screen, you can pre-define your custom messages that you can use while sending messages.\n\nYou can use some variables in your messages. The special characters you will write in your messages will be replaced by their real values when you will use the messages and this way, you get customized messages. You can use the variables below:\n\n%1% = first name of person\n%2% = full name of person\n\nFor example; for a person named \"Tom Riddle\"\n\n\"Can you call me back %1%?\" message will be converted to \"Can you call me back Tom?\",\n\n\"Can you call me back %2%?\" message will be converted to \"Can you call me back Tom Riddle?\".</string>
+    
+    <string name="aboutDialog_title">About Text Instead?</string>
     <string name="aboutDialog_message">This application is developed by Mehmet Akif Tütüncü.\n\nThe application is completely free. You can use it however you like.\n\nIf you are interested in the source codes of the application, you can send an email about this to the developer.\n\nPlease let the developer know about your opinions, suggestions and errors.\n\nHope you can reach the people you call&#8230;</string>
-    <string name="aboutDialog_ok">OK</string>
     
     <string name="preferences_general_title">General</string>
     <string name="preferences_delay_title">Delay (Seconds)</string>
